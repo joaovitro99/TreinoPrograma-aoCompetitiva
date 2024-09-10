@@ -1,6 +1,6 @@
 def Buscabinaria(vetor,n):
     left = 0
-    right = n
+    right = len(vetor) -1
     achou = False
     while left < right and not achou:
         media = int((left+right)/2)
