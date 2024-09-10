@@ -1,0 +1,14 @@
+def Buscabinaria(vetor,n):
+    left = 0
+    right = n
+    achou = False
+    while left < right and not achou:
+        media = int((left+right)/2)
+        if vetor[media] == n:
+            achou = True
+        else:
+            if n < media:
+                right = media-1
+            else:
+                left = media+1
+    return achou
