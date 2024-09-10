@@ -1,0 +1,27 @@
+def Buscabinaria(vetor, soma):
+    left = 0
+    right = len(vetor) - 1
+    achou = False
+    while left <= right and not achou:
+        media = (left + right) // 2  
+        if vetor[media] * len(vetor) >= soma:
+            achou = True
+        else:
+            if soma < vetor[media] * len(vetor):
+                right = media - 1
+            else:
+                left = media + 1
+    return vetor[media] if achou else -1  # Retorna -1 se não achar
+ 
+x = int(input())  # Número de testes
+i = 0
+while i < x:
+    y = int(input())  # Tamanho do vetor
+    v = []  # Inicializar a lista fora do loop para manter os valores
+    soma = 0  # Inicializar a soma
+    v = list(map(int,input().split(" ")))
+    soma = sum(v)
+ 
+    m = Buscabinaria(v, soma)
+    print(m)
+    i += 1
